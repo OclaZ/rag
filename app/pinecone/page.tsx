@@ -67,8 +67,7 @@ const VectorDBPage = (props: Props) => {
 
         const data = new TextDecoder().decode(value);
         console.log(data);
-        const { filename, totalChunks, chunksUpserted, isComplete } =
-          JSON.parse(data);
+        const { filename, totalChunks, chunksUpserted } = JSON.parse(data);
         const currentProgress = (chunksUpserted / totalChunks) * 100;
         setProgress(currentProgress);
         setFilename(`${filename} [${chunksUpserted}/${totalChunks}]`);
